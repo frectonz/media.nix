@@ -1,4 +1,5 @@
 {
+  pkgs,
   flake,
   inputs,
   ...
@@ -7,6 +8,7 @@
   imports = [
     ./nix.nix
     ./shell.nix
+    ./sound.nix
     ./openssh.nix
     ./hyprland.nix
     ./hardware-configuration.nix
@@ -33,6 +35,8 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Africa/Addis_Ababa";
+
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code ];
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {

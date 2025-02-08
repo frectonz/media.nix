@@ -19,16 +19,15 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wl-clipboard
-
     mako
-    libnotify
-
     wofi
+    light
+    libnotify
     xdg-utils
-    dmenu-wayland
     grimblast
     hyprpaper
+    wl-clipboard
+    dmenu-wayland
   ];
 
   xdg.portal = {
