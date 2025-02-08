@@ -1,14 +1,21 @@
 {
+  flake,
   inputs,
   ...
 }:
 {
   imports = [
     ./shell.nix
+    ./openssh.nix
     ./hyprland.nix
     ./hardware-configuration.nix
 
     inputs.home-manager.nixosModules.home-manager
+  ];
+
+  services.openssh.enable = true;
+  users.users.root.openssh.authorizedKeys.keyFiles = [
+    "${flake}/users/frectonz/authorized_keys"
   ];
 
   home-manager.useGlobalPkgs = true;
