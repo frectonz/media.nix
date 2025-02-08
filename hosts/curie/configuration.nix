@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./nix.nix
     ./shell.nix
     ./openssh.nix
     ./hyprland.nix
