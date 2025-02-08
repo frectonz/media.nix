@@ -9,10 +9,12 @@
     ./nix.nix
     ./shell.nix
     ./sound.nix
+    ./nixarr.nix
     ./openssh.nix
     ./hyprland.nix
     ./hardware-configuration.nix
 
+    inputs.nixarr.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
 
