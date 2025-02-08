@@ -1,4 +1,5 @@
 {
+  inputs,
   ...
 }:
 {
@@ -6,7 +7,13 @@
     ./shell.nix
     ./hyprland.nix
     ./hardware-configuration.nix
+
+    inputs.home-manager.nixosModules.home-manager
   ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.root = import ./home.nix;
 
   nixpkgs.config.allowUnfree = true;
 
