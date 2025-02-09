@@ -106,6 +106,11 @@ in
               icon = "lidarr.png";
               description = "Automated music downloads";
               href = "http://${vars.ip}:8686";
+              widget = {
+                type = "lidarr";
+                url = "http://${vars.ip}:8686";
+                key = "b310c4c8e6e142e2a0ef5d28e2efb89e";
+              };
             };
           }
           {
