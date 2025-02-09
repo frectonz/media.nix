@@ -48,6 +48,16 @@ in
               icon = "jellyfin.png";
               description = "Media streaming";
               href = "http://${vars.ip}:8096";
+              widget = {
+                type = "jellyfin";
+                url = "http://${vars.ip}:8096";
+                key = "07102904fd674a639c07275e9102d968";
+                enableBlocks = true;
+                enableNowPlaying = true;
+                enableUser = true;
+                showEpisodeNumber = true;
+                expandOneStreamToTwoRows = true;
+              };
             };
           }
           {
