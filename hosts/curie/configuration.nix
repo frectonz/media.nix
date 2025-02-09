@@ -24,6 +24,18 @@
     "${flake}/users/frectonz/authorized_keys"
   ];
 
+  users.users.media = {
+    isNormalUser = true;
+    description = "media";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
+  };
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.root = import ./home.nix;
