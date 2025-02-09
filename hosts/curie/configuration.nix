@@ -65,6 +65,12 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
+
   # Used by NixOS to handle state changes.
   system.stateVersion = "24.11";
 }
