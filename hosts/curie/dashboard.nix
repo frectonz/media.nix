@@ -118,6 +118,11 @@ in
               icon = "readarr.png";
               description = "Automated eBook and audiobook downloads";
               href = "http://${vars.ip}:8787";
+              widget = {
+                type = "readarr";
+                url = "http://${vars.ip}:8787";
+                key = "c56a8989505946bbb71f4b48ecf30b2d";
+              };
             };
           }
           {
