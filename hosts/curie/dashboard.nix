@@ -62,6 +62,18 @@ in
             };
           }
           {
+            "Jellyseerr" = {
+              icon = "jellyseerr.png";
+              description = "Media requests";
+              href = "http://${vars.ip}:5055";
+              widget = {
+                type = "jellyseerr";
+                url = "http://${vars.ip}:5055";
+                key = "MTczOTEyMDUwNDY0ODE4YTYxNThmLWIwMjMtNGNhMy05MDRlLWY0ZmVlNThiOGY5Zg==";
+              };
+            };
+          }
+          {
             "Transmission" = {
               icon = "transmission.png";
               description = "Handles torrent downloads";
