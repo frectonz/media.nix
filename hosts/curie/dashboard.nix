@@ -52,6 +52,59 @@ in
           }
         ];
       }
+      {
+        "Arr Services" = [
+          {
+            "Radarr" = {
+              icon = "radarr.png";
+              description = "Automated movie downloads";
+              href = "http://${vars.ip}:7878";
+            };
+          }
+          {
+            "Sonarr" = {
+              icon = "sonarr.png";
+              description = "Automated TV show downloads";
+              href = "http://${vars.ip}:8989";
+            };
+          }
+          {
+            "Lidarr" = {
+              icon = "lidarr.png";
+              description = "Automated music downloads";
+              href = "http://${vars.ip}:8989";
+            };
+          }
+          {
+            "Lidarr" = {
+              icon = "lidarr.png";
+              description = "Automated music downloads";
+              href = "http://${vars.ip}:8686";
+            };
+          }
+          {
+            "Readarr" = {
+              icon = "readarr.png";
+              description = "Automated eBook and audiobook downloads";
+              href = "http://${vars.ip}:8787";
+            };
+          }
+          {
+            "Bazarr" = {
+              icon = "bazarr.png";
+              description = "Automated subtitle downloads";
+              href = "http://${vars.ip}:6767";
+            };
+          }
+          {
+            "Prowlarr" = {
+              icon = "prowlarr.png";
+              description = "Index manager";
+              href = "http://${vars.ip}:9696";
+            };
+          }
+        ];
+      }
     ];
   };
 
