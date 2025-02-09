@@ -79,13 +79,6 @@ in
             "Lidarr" = {
               icon = "lidarr.png";
               description = "Automated music downloads";
-              href = "http://${vars.ip}:8989";
-            };
-          }
-          {
-            "Lidarr" = {
-              icon = "lidarr.png";
-              description = "Automated music downloads";
               href = "http://${vars.ip}:8686";
             };
           }
