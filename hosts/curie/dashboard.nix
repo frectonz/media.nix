@@ -93,6 +93,12 @@ in
               icon = "sonarr.png";
               description = "Automated TV show downloads";
               href = "http://${vars.ip}:8989";
+              widget = {
+                type = "sonarr";
+                url = "http://${vars.ip}:8989";
+                key = "03274698a7b14848938cf641cfd3b144";
+                enableQueue = true;
+              };
             };
           }
           {
