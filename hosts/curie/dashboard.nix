@@ -80,6 +80,12 @@ in
               icon = "radarr.png";
               description = "Automated movie downloads";
               href = "http://${vars.ip}:7878";
+              widget = {
+                type = "radarr";
+                url = "http://${vars.ip}:7878";
+                key = "acfc274802fd46f8bbc5f1283f512259";
+                enableQueue = true;
+              };
             };
           }
           {
