@@ -6,6 +6,7 @@ in
   services.homepage-dashboard = {
     enable = true;
     listenPort = 80;
+    openFirewall = true;
 
     widgets = [
       {
@@ -97,7 +98,6 @@ in
                 type = "sonarr";
                 url = "http://${vars.ip}:8989";
                 key = "03274698a7b14848938cf641cfd3b144";
-                enableQueue = true;
               };
             };
           }
@@ -142,6 +142,11 @@ in
               icon = "prowlarr.png";
               description = "Index manager";
               href = "http://${vars.ip}:9696";
+              widget = {
+                type = "prowlarr";
+                url = "http://${vars.ip}:9696";
+                key = "dbfb8b7ec76b481885c7ad136fd61d80";
+              };
             };
           }
         ];
@@ -150,6 +155,4 @@ in
   };
 
   systemd.services.homepage-dashboard.serviceConfig.AmbientCapabilities = "cap_net_bind_service";
-
-  networking.firewall.allowedTCPPorts = [ 80 ];
 }
