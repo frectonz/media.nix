@@ -65,6 +65,10 @@ in
               icon = "transmission.png";
               description = "Handles torrent downloads";
               href = "http://${vars.ip}:9091";
+              widget = {
+                type = "transmission";
+                url = "http://${vars.ip}:9091";
+              };
             };
           }
         ];
