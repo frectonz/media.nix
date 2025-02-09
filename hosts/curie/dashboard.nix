@@ -54,4 +54,8 @@ in
       }
     ];
   };
+
+  systemd.services.homepage-dashboard.serviceConfig.AmbientCapabilities = "cap_net_bind_service";
+
+  networking.firewall.allowedTCPPorts = [ 80 ];
 }
