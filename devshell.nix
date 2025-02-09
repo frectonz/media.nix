@@ -18,5 +18,10 @@ let
   };
 in
 pkgs.mkShell {
-  packages = [ login switch ];
+  packages = [
+    login
+    switch
+  ];
+
+  NIX_SSHOPTS = "-i .ssh/id_ed25519";
 }
