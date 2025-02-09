@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   nixarr = {
     enable = true;
 
@@ -19,6 +23,10 @@
     radarr.enable = true;
     readarr.enable = true;
     sonarr.enable = true;
-    # jellyseerr.enable = true;
+  };
+
+  services.flaresolverr = {
+    enable = true;
+    package = pkgs.nur.repos.xddxdd.flaresolverr-21hsmw;
   };
 }

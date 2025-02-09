@@ -15,6 +15,7 @@
     ./dashboard.nix
     ./hardware-configuration.nix
 
+    inputs.nur.modules.nixos.default
     inputs.nixarr.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
