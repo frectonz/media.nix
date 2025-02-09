@@ -42,12 +42,19 @@ in
 
     services = [
       {
-        "Jellyfin" = [
+        "Media Services" = [
           {
             "Jellyfin" = {
               icon = "jellyfin.png";
               description = "Media streaming";
               href = "http://${vars.ip}:8096";
+            };
+          }
+          {
+            "Transmission" = {
+              icon = "transmission.png";
+              description = "Handles torrent downloads";
+              href = "http://${vars.ip}:9091";
             };
           }
         ];
