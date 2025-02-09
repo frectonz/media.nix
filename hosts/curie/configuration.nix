@@ -12,6 +12,7 @@
     ./nixarr.nix
     ./openssh.nix
     ./hyprland.nix
+    ./dashboard.nix
     ./hardware-configuration.nix
 
     inputs.nixarr.nixosModules.default
