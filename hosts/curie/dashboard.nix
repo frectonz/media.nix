@@ -130,6 +130,11 @@ in
               icon = "bazarr.png";
               description = "Automated subtitle downloads";
               href = "http://${vars.ip}:6767";
+              widget = {
+                type = "bazarr";
+                url = "http://${vars.ip}:6767";
+                key = "e93c0a805c819bdc073392c21b8c9b09";
+              };
             };
           }
           {
