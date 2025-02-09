@@ -31,14 +31,14 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    packages = [ ];
   };
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.root = import ./home.nix;
+  home-manager.users.media = import ./home.nix;
+  home-manager.backupFileExtension = "backup";
 
   nixpkgs.config.allowUnfree = true;
 
