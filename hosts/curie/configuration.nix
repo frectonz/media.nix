@@ -13,6 +13,7 @@
     ./openssh.nix
     ./hyprland.nix
     ./dashboard.nix
+    ./tailscale.nix
     ./hardware-configuration.nix
 
     inputs.nur.modules.nixos.default
