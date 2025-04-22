@@ -48,10 +48,10 @@ in
             "Jellyfin" = {
               icon = "jellyfin.png";
               description = "Media streaming";
-              href = "http://${vars.ip}:8096";
+              href = "http://curie:8096";
               widget = {
                 type = "jellyfin";
-                url = "http://${vars.ip}:8096";
+                url = "http://curie:8096";
                 key = "07102904fd674a639c07275e9102d968";
                 enableBlocks = true;
                 enableNowPlaying = true;
@@ -65,10 +65,10 @@ in
             "Jellyseerr" = {
               icon = "jellyseerr.png";
               description = "Media requests";
-              href = "http://${vars.ip}:5055";
+              href = "http://curie:5055";
               widget = {
                 type = "jellyseerr";
-                url = "http://${vars.ip}:5055";
+                url = "http://curie:5055";
                 key = "MTczOTEyMDUwNDY0ODE4YTYxNThmLWIwMjMtNGNhMy05MDRlLWY0ZmVlNThiOGY5Zg==";
               };
             };
@@ -77,10 +77,10 @@ in
             "Transmission" = {
               icon = "transmission.png";
               description = "Handles torrent downloads";
-              href = "http://${vars.ip}:9091";
+              href = "http://curie:9091";
               widget = {
                 type = "transmission";
-                url = "http://${vars.ip}:9091";
+                url = "http://curie:9091";
               };
             };
           }
@@ -92,10 +92,10 @@ in
             "Radarr" = {
               icon = "radarr.png";
               description = "Automated movie downloads";
-              href = "http://${vars.ip}:7878";
+              href = "http://curie:7878";
               widget = {
                 type = "radarr";
-                url = "http://${vars.ip}:7878";
+                url = "http://curie:7878";
                 key = "acfc274802fd46f8bbc5f1283f512259";
                 enableQueue = true;
               };
@@ -105,10 +105,10 @@ in
             "Sonarr" = {
               icon = "sonarr.png";
               description = "Automated TV show downloads";
-              href = "http://${vars.ip}:8989";
+              href = "http://curie:8989";
               widget = {
                 type = "sonarr";
-                url = "http://${vars.ip}:8989";
+                url = "http://curie:8989";
                 key = "03274698a7b14848938cf641cfd3b144";
               };
             };
@@ -117,10 +117,10 @@ in
             "Lidarr" = {
               icon = "lidarr.png";
               description = "Automated music downloads";
-              href = "http://${vars.ip}:8686";
+              href = "http://curie:8686";
               widget = {
                 type = "lidarr";
-                url = "http://${vars.ip}:8686";
+                url = "http://curie:8686";
                 key = "b310c4c8e6e142e2a0ef5d28e2efb89e";
               };
             };
@@ -129,10 +129,10 @@ in
             "Readarr" = {
               icon = "readarr.png";
               description = "Automated eBook and audiobook downloads";
-              href = "http://${vars.ip}:8787";
+              href = "http://curie:8787";
               widget = {
                 type = "readarr";
-                url = "http://${vars.ip}:8787";
+                url = "http://curie:8787";
                 key = "c56a8989505946bbb71f4b48ecf30b2d";
               };
             };
@@ -141,10 +141,10 @@ in
             "Prowlarr" = {
               icon = "prowlarr.png";
               description = "Index manager";
-              href = "http://${vars.ip}:9696";
+              href = "http://curie:9696";
               widget = {
                 type = "prowlarr";
-                url = "http://${vars.ip}:9696";
+                url = "http://curie:9696";
                 key = "dbfb8b7ec76b481885c7ad136fd61d80";
               };
             };
