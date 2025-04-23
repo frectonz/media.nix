@@ -80,7 +80,7 @@ in
               href = "http://curie:9091";
               widget = {
                 type = "transmission";
-                url = "http://curie:9091";
+                url = "http://localhost:9091";
               };
             };
           }
