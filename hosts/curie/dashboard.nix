@@ -1,7 +1,4 @@
 { ... }:
-let
-  vars = import ./variables.nix;
-in
 {
   services.homepage-dashboard = {
     enable = true;
@@ -52,7 +49,7 @@ in
               widget = {
                 type = "jellyfin";
                 url = "http://curie:8096";
-                key = "07102904fd674a639c07275e9102d968";
+                key = "d9d2f734c3434d24873a6ebf7b9994ad";
                 enableBlocks = true;
                 enableNowPlaying = true;
                 enableUser = true;
@@ -69,7 +66,7 @@ in
               widget = {
                 type = "jellyseerr";
                 url = "http://curie:5055";
-                key = "MTczOTEyMDUwNDY0ODE4YTYxNThmLWIwMjMtNGNhMy05MDRlLWY0ZmVlNThiOGY5Zg==";
+                key = "MTc0NjcwMDI4MjE2OWM4ODBhN2IwLWQ2ODgtNDdlZC1hMjAyLTMyMjY4ZmI4NzIyZg==";
               };
             };
           }
