@@ -42,31 +42,14 @@
       {
         "Media Services" = [
           {
-            "Curie Jellyfin" = {
+            "Jellyfin" = {
               icon = "jellyfin.png";
               description = "Media streaming";
               href = "http://curie:8096";
               widget = {
                 type = "jellyfin";
                 url = "http://curie:8096";
-                key = "d9d2f734c3434d24873a6ebf7b9994ad";
-                enableBlocks = true;
-                enableNowPlaying = true;
-                enableUser = true;
-                showEpisodeNumber = true;
-                expandOneStreamToTwoRows = true;
-              };
-            };
-          }
-          {
-            "Newton Jellyfin" = {
-              icon = "jellyfin.png";
-              description = "Media streaming";
-              href = "http://newton:8096";
-              widget = {
-                type = "jellyfin";
-                url = "http://newton:8096";
-                key = "215f94ac026549f7bd471e2d68bae8f9";
+                key = "c6ab5aa650ac4e80ac571d5d14a88297";
                 enableBlocks = true;
                 enableNowPlaying = true;
                 enableUser = true;
