@@ -66,7 +66,7 @@
               widget = {
                 type = "jellyseerr";
                 url = "http://curie:5055";
-                key = "MTc0NjcwMDI4MjE2OWM4ODBhN2IwLWQ2ODgtNDdlZC1hMjAyLTMyMjY4ZmI4NzIyZg==";
+                key = "MTc1MDkyMzY3MzIyMTc0ZTA3MjYxLWFmZTItNDI0NS1iMGE2LTUzOTY5YjcwN2FkOQ==";
               };
             };
           }
