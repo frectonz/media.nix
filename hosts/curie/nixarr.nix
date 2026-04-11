@@ -3,7 +3,7 @@
   ...
 }:
 let
-  jellyseerr = pkgs.jellyseerr.overrideAttrs {
+  seerr = pkgs.seerr.overrideAttrs {
     postBuild = ''
       # Clean up broken symlinks left behind by `pnpm prune`
       find node_modules -type l ! -exec test -e {} \; -delete
@@ -26,7 +26,7 @@ in
 
     jellyseerr = {
       enable = true;
-      package = jellyseerr;
+      package = seerr;
     };
 
     transmission = {

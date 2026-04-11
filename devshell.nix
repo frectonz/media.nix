@@ -19,6 +19,7 @@ let
 in
 pkgs.mkShell {
   packages = [
+    pkgs.nixos-rebuild
     login
     switch
   ];

@@ -45,10 +45,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
   };
 
   # Used by NixOS to handle state changes.
