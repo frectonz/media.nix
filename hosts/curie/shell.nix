@@ -38,6 +38,7 @@
   programs.command-not-found.enable = false;
 
   environment.systemPackages = [
+    pkgs.dua
     pkgs.duf
     pkgs.lsd
     pkgs.git
