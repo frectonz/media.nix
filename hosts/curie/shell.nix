@@ -40,7 +40,6 @@
   environment.systemPackages = [
     pkgs.duf
     pkgs.lsd
-    pkgs.vim
     pkgs.git
     pkgs.bat
     pkgs.btop
