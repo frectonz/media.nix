@@ -48,5 +48,6 @@
     pkgs.sendme
     pkgs.ripgrep
     pkgs.lazygit
+    pkgs.ghostty.terminfo
   ];
 }
