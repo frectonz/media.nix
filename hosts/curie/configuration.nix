@@ -10,7 +10,6 @@
     ./nixarr.nix
     ./openssh.nix
     ./dashboard.nix
-    ./tailscale.nix
     ./hardware-configuration.nix
 
     inputs.nur.modules.nixos.default
