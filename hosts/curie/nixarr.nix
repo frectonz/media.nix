@@ -2,14 +2,6 @@
   pkgs,
   ...
 }:
-let
-  seerr = pkgs.seerr.overrideAttrs {
-    postBuild = ''
-      # Clean up broken symlinks left behind by `pnpm prune`
-      find node_modules -type l ! -exec test -e {} \; -delete
-    '';
-  };
-in
 {
   nixarr = {
     enable = true;
@@ -24,10 +16,7 @@ in
     readarr.enable = true;
     sonarr.enable = true;
 
-    jellyseerr = {
-      enable = true;
-      package = seerr;
-    };
+    jellyseerr.enable = true;
 
     transmission = {
       enable = true;
