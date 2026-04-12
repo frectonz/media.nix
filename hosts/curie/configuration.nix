@@ -21,6 +21,16 @@
     "${flake}/users/frectonz/authorized_keys"
   ];
 
+  users.users.media = {
+    isNormalUser = true;
+    description = "media";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = [ ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   boot.loader.grub.enable = true;

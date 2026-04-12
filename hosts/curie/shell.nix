@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   users.users.root.shell = pkgs.fish;
+  users.users.media.shell = pkgs.fish;
 
   programs.fish = {
     enable = true;
