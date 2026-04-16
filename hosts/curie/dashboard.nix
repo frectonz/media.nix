@@ -14,5 +14,18 @@ in
     '';
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  systemd.services.dufs = {
+    description = "Dufs file server";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.dufs}/bin/dufs / -p 5000 -A";
+      Restart = "on-failure";
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [
+    80
+    5000
+  ];
 }
