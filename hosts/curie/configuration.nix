@@ -19,6 +19,7 @@
   services.openssh.enable = true;
   users.users.root.openssh.authorizedKeys.keyFiles = [
     "${flake}/users/frectonz/authorized_keys"
+    "${flake}/users/chuchu/authorized_keys"
   ];
 
   users.users.media = {
