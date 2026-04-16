@@ -50,5 +50,6 @@
     pkgs.ripgrep
     pkgs.lazygit
     pkgs.ghostty.terminfo
+    pkgs.kitty.terminfo
   ];
 }
