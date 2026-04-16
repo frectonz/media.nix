@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curie</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      color: #fff;
+    }
+
+    .section { margin-bottom: 2.5rem; width: 100%; max-width: 720px; }
+
+    .section h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.75rem;
+      padding-left: 0.25rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.5rem;
+    }
+
+    a.card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #e0e0e0;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    a.card:hover {
+      background: #222;
+      border-color: #444;
+    }
+
+    .card .icon {
+      font-size: 1.5rem;
+      width: 2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .card .label {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .card .desc {
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 0.125rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Curie</h1>
+
+  <div class="section">
+    <h2>Media</h2>
+    <div class="grid">
+      <a class="card" data-port="8096">
+        <div class="icon">🎬</div>
+        <div><div class="label">Jellyfin</div><div class="desc">Media streaming</div></div>
+      </a>
+      <a class="card" data-port="5055">
+        <div class="icon">🎫</div>
+        <div><div class="label">Jellyseerr</div><div class="desc">Media requests</div></div>
+      </a>
+      <a class="card" data-port="9091">
+        <div class="icon">⬇️</div>
+        <div><div class="label">Transmission</div><div class="desc">Torrent downloads</div></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Arr Stack</h2>
+    <div class="grid">
+      <a class="card" data-port="7878">
+        <div class="icon">🎥</div>
+        <div><div class="label">Radarr</div><div class="desc">Movies</div></div>
+      </a>
+      <a class="card" data-port="8989">
+        <div class="icon">📺</div>
+        <div><div class="label">Sonarr</div><div class="desc">TV Shows</div></div>
+      </a>
+      <a class="card" data-port="8686">
+        <div class="icon">🎵</div>
+        <div><div class="label">Lidarr</div><div class="desc">Music</div></div>
+      </a>
+      <a class="card" data-port="8787">
+        <div class="icon">📚</div>
+        <div><div class="label">Readarr</div><div class="desc">Books</div></div>
+      </a>
+      <a class="card" data-port="9696">
+        <div class="icon">🔍</div>
+        <div><div class="label">Prowlarr</div><div class="desc">Indexer manager</div></div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll("a[data-port]").forEach(a => {
+      a.href = location.protocol + "//" + location.hostname + ":" + a.dataset.port;
+    });
+  </script>
+</body>
+</html>
