@@ -17,6 +17,7 @@
     sonarr.enable = true;
 
     jellyseerr.enable = true;
+    jellyseerr.package = pkgs.seer;
 
     transmission = {
       enable = true;
