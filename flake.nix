@@ -9,5 +9,13 @@
   };
 
   # Load the blueprint
-  outputs = inputs: inputs.blueprint { inherit inputs; };
+  outputs =
+    inputs:
+    inputs.blueprint {
+      inherit inputs;
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
+    };
 }
