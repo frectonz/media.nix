@@ -6,7 +6,7 @@
 }:
 let
   mediaDir = "/data/media";
-  stateDir = "${mediaDir}/.state/nixarr";
+  stateDir = "${mediaDir}/.state";
 
   jellyfinDir = "${stateDir}/jellyfin";
   sonarrDir = "${stateDir}/sonarr";
@@ -14,11 +14,12 @@ let
   lidarrDir = "${stateDir}/lidarr";
   readarrDir = "${stateDir}/readarr";
   prowlarrDir = "${stateDir}/prowlarr";
-  jellyseerrDir = "${stateDir}/jellyseerr";
+  seerrDir = "${stateDir}/seerr";
   transmissionDir = "${stateDir}/transmission";
   torrentsDir = "${mediaDir}/torrents";
 
-  # UIDs/GIDs match nixarr so existing on-disk file ownership stays valid.
+  # UIDs/GIDs preserved from the original nixarr layout so existing on-disk
+  # file ownership stays valid after the cleanup migration.
   uids = {
     jellyfin = 146;
     sonarr = 274;
@@ -27,21 +28,19 @@ let
     readarr = 250;
     transmission = 70;
     prowlarr = 293;
-    jellyseerr = 262;
+    seerr = 262;
   };
   gids = {
     media = 169;
     prowlarr = 287;
-    jellyseerr = 250;
+    seerr = 250;
   };
 in
 {
   users.groups = {
     media.gid = gids.media;
     prowlarr.gid = gids.prowlarr;
-    jellyseerr = {
-      gid = gids.jellyseerr;
-    };
+    seerr.gid = gids.seerr;
   };
 
   users.users = {
@@ -65,10 +64,10 @@ in
       group = "prowlarr";
       uid = uids.prowlarr;
     };
-    jellyseerr = {
+    seerr = {
       isSystemUser = true;
-      group = "jellyseerr";
-      uid = uids.jellyseerr;
+      group = "seerr";
+      uid = uids.seerr;
     };
   };
 
@@ -87,7 +86,7 @@ in
     "d '${lidarrDir}'           0700 lidarr       media - -"
     "d '${readarrDir}'          0700 readarr      root - -"
     "d '${prowlarrDir}'         0700 prowlarr     root - -"
-    "d '${jellyseerrDir}'       0700 jellyseerr   root - -"
+    "d '${seerrDir}'            0700 seerr        root - -"
     "d '${transmissionDir}'                             0750 transmission media - -"
     "d '${transmissionDir}/.config'                     0750 transmission media - -"
     "d '${transmissionDir}/.config/transmission-daemon' 0750 transmission media - -"
@@ -159,54 +158,30 @@ in
     enable = true;
     openFirewall = true;
   };
-  # Setting User/Group to a real user disables DynamicUser; force ExecStart so
-  # prowlarr writes to the existing state path on /data/media. nixpkgs's
-  # StateDirectory=prowlarr stays — it just creates an unused /var/lib/prowlarr.
+  # Force DynamicUser off so /var/lib/prowlarr isn't recreated as a
+  # /var/lib/private/prowlarr symlink each switch. Force ExecStart so prowlarr
+  # writes to its state path under /data/media.
   systemd.services.prowlarr.serviceConfig = {
+    DynamicUser = lib.mkForce false;
     User = "prowlarr";
     Group = "prowlarr";
     ExecStart = lib.mkForce "${lib.getExe pkgs.prowlarr} -nobrowser -data=${prowlarrDir}";
     ReadWritePaths = [ prowlarrDir ];
   };
 
-  # Jellyseerr unit — mirrors nixarr's: fixed user, custom CONFIG_DIRECTORY,
-  # uses pkgs.seerr (the maintained fork).
-  systemd.services.jellyseerr = {
-    description = "Jellyseerr, a requests manager for Jellyfin";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    environment = {
-      PORT = "5055";
-      CONFIG_DIRECTORY = jellyseerrDir;
-    };
-    serviceConfig = {
-      Type = "exec";
-      StateDirectory = "jellyseerr";
-      DynamicUser = false;
-      User = "jellyseerr";
-      Group = "jellyseerr";
-      ExecStart = lib.getExe pkgs.seerr;
-      Restart = "on-failure";
-
-      ProtectHome = true;
-      PrivateTmp = true;
-      PrivateDevices = true;
-      ProtectHostname = true;
-      ProtectClock = true;
-      ProtectKernelTunables = true;
-      ProtectKernelModules = true;
-      ProtectKernelLogs = true;
-      ProtectControlGroups = true;
-      NoNewPrivileges = true;
-      RestrictRealtime = true;
-      RestrictSUIDSGID = true;
-      RemoveIPC = true;
-      PrivateMounts = true;
-      ProtectSystem = "strict";
-      ReadWritePaths = [ jellyseerrDir ];
-    };
+  services.seerr = {
+    enable = true;
+    openFirewall = true;
+    configDir = seerrDir;
   };
-  networking.firewall.allowedTCPPorts = [ 5055 ];
+  # Pin to a fixed user so file ownership at configDir survives across rebuilds.
+  systemd.services.seerr.serviceConfig = {
+    DynamicUser = lib.mkForce false;
+    User = "seerr";
+    Group = "seerr";
+    StateDirectory = lib.mkForce "seerr";
+    ReadWritePaths = [ seerrDir ];
+  };
 
   services.transmission = {
     enable = true;
