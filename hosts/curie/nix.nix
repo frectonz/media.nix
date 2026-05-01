@@ -22,4 +22,11 @@
 
   # Avoid copying unnecessary stuff over SSH
   nix.settings.builders-use-substitutes = true;
+
+  # Periodically drop old generations.
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 }

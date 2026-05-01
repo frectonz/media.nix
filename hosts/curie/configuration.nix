@@ -48,6 +48,8 @@
     HandleLidSwitchExternalPower = "ignore";
   };
 
+  services.journald.extraConfig = "SystemMaxUse=200M";
+
   # Used by NixOS to handle state changes.
   system.stateVersion = "24.11";
 }
