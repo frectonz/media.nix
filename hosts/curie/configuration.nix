@@ -1,19 +1,15 @@
 {
   flake,
-  inputs,
   ...
 }:
 {
   imports = [
     ./nix.nix
     ./shell.nix
-    ./nixarr.nix
+    ./media.nix
     ./openssh.nix
     ./dashboard.nix
     ./hardware-configuration.nix
-
-    inputs.nur.modules.nixos.default
-    inputs.nixarr.nixosModules.default
   ];
 
   services.openssh.enable = true;
