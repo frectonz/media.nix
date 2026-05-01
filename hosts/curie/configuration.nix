@@ -7,6 +7,7 @@
     ./nix.nix
     ./shell.nix
     ./media.nix
+    ./graphics.nix
     ./openssh.nix
     ./dashboard.nix
     ./hardware-configuration.nix

@@ -119,6 +119,21 @@ in
     configDir = "${jellyfinDir}/config";
     cacheDir = "${jellyfinDir}/cache";
     logDir = "${jellyfinDir}/log";
+    hardwareAcceleration = {
+      enable = true;
+      type = "vaapi";
+      device = "/dev/dri/renderD128";
+    };
+    transcoding = {
+      enableHardwareEncoding = true;
+      enableToneMapping = true;
+      hardwareDecodingCodecs = {
+        h264 = true;
+        mpeg2 = true;
+        vc1 = true;
+      };
+    };
+    forceEncodingConfig = true;
   };
   systemd.services.jellyfin.serviceConfig.IOSchedulingPriority = 0;
 
