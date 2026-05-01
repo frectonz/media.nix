@@ -136,6 +136,9 @@ in
     forceEncodingConfig = true;
   };
   systemd.services.jellyfin.serviceConfig.IOSchedulingPriority = 0;
+  # Plugins like Intro Skipper resolve `ffmpeg` from PATH; jellyfin itself uses
+  # its bundled binary via --ffmpeg= so it doesn't need this, but plugins do.
+  systemd.services.jellyfin.path = [ pkgs.jellyfin-ffmpeg ];
 
   services.sonarr = {
     enable = true;
