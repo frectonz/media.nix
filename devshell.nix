@@ -13,7 +13,7 @@ let
   switch = pkgs.writeShellApplication {
     name = "server-switch";
     text = ''
-      nh os switch .#curie --target-host ${connection} --build-host ${connection}
+      nh os switch .#curie --target-host ${connection} --build-host ${connection} --elevation-strategy none
     '';
   };
 in
