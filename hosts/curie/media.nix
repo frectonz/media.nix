@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  perSystem,
   ...
 }:
 let
@@ -242,9 +241,4 @@ in
     };
   };
   systemd.services.transmission.serviceConfig.IOSchedulingPriority = 7;
-
-  services.flaresolverr = {
-    enable = true;
-    package = perSystem.self.flaresolverr-21hsmw;
-  };
 }
