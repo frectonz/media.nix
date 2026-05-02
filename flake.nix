@@ -6,6 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixpkgs-unstable";
     blueprint.url = "github:numtide/blueprint";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Load the blueprint

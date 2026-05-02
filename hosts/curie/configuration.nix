@@ -4,12 +4,14 @@
 }:
 {
   imports = [
+    ./nh.nix
     ./nix.nix
     ./shell.nix
     ./media.nix
     ./graphics.nix
     ./openssh.nix
     ./dashboard.nix
+    ./nix-index.nix
     ./hardware-configuration.nix
   ];
 

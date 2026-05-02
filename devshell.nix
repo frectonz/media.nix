@@ -13,12 +13,13 @@ let
   switch = pkgs.writeShellApplication {
     name = "server-switch";
     text = ''
-      nixos-rebuild --flake .#curie --target-host ${connection} --build-host ${connection} switch
+      nh os switch .#curie --target-host ${connection} --build-host ${connection}
     '';
   };
 in
 pkgs.mkShell {
   packages = [
+    pkgs.nh
     pkgs.nixos-rebuild
     login
     switch
