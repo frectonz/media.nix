@@ -27,6 +27,10 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  # "countdown" ignores the faulty keyboard's stray keys; "menu" freezes on them.
+  boot.loader.timeout = 2;
+  boot.loader.grub.timeoutStyle = "countdown";
+
   networking.hostName = "curie";
   networking.networkmanager.enable = true;
 
