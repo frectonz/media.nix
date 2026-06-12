@@ -34,6 +34,8 @@
     enable = true;
   };
 
+  programs.nh.enable = true;
+
   programs.command-not-found.enable = false;
 
   environment.systemPackages = [

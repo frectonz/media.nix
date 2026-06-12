@@ -4,7 +4,6 @@
 }:
 {
   imports = [
-    ./nh.nix
     ./nix.nix
     ./shell.nix
     ./media.nix
