@@ -34,6 +34,7 @@
 
   networking.hostName = "curie";
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
 
   time.timeZone = "Africa/Addis_Ababa";
 
