@@ -8,6 +8,7 @@
     ./nix.nix
     ./shell.nix
     ./media.nix
+    ./console.nix
     ./graphics.nix
     ./openssh.nix
     ./dashboard.nix
